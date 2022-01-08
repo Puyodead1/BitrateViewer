@@ -1,36 +1,27 @@
-import java.io.File;
-import java.util.ArrayList;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+package me.puyodead1;
 
 import javafx.application.Application;
 import javafx.application.Platform;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.chart.AreaChart;
-import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
-import javafx.scene.control.Button;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
-import javafx.scene.layout.Border;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.BorderStroke;
-import javafx.scene.layout.BorderStrokeStyle;
-import javafx.scene.layout.BorderWidths;
-import javafx.scene.layout.CornerRadii;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Objects;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class View extends Application implements Observer{
     
@@ -86,7 +77,7 @@ public class View extends Application implements Observer{
         root.setCenter(areaChart);
         
         Scene scene = new Scene(root, 700, 300);
-        scene.getStylesheets().add(getClass().getResource("resources/style.css").toExternalForm());
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/style.css")).toExternalForm());
         
         
         primaryStage.setScene(scene);
@@ -100,7 +91,7 @@ public class View extends Application implements Observer{
                 System.exit(0);
             }
             catch(Exception ex) {
-                
+                ex.printStackTrace();
             }
         });
         
@@ -124,7 +115,7 @@ public class View extends Application implements Observer{
                 startAnalysis(file);
             }
             catch(Exception ex) {
-                
+                ex.printStackTrace();
             }
         });
 
@@ -144,7 +135,7 @@ public class View extends Application implements Observer{
                 control.savePreference(path);
             }
             catch(Exception ex) {
-                
+                ex.printStackTrace();
             }
         });
     }

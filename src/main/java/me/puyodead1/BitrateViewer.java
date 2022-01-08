@@ -1,4 +1,4 @@
-import java.util.prefs.Preferences;
+package me.puyodead1;
 
 public class BitrateViewer {
     public static void main(String[] args) {

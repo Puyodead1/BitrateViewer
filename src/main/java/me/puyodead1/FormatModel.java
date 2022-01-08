@@ -1,3 +1,5 @@
+package me.puyodead1;
+
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
@@ -6,13 +8,13 @@ public class FormatModel implements Observable{
     
     private ArrayList<Observer> observers = new ArrayList<Observer>();
     
-    private double increment;
-    private double sample_size;
-    private double frameCount;
-    private double num;
-    private double denom;
+    private final double increment;
+    private final double sample_size;
+    private final double frameCount;
+    private final double num;
+    private final double denom;
     private double maxBitrate, avgBitrate;
-    private double duration;
+    private final double duration;
     
     private ArrayList<Double> samples = new ArrayList<Double>();
     
